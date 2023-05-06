@@ -16,8 +16,6 @@ export const checkoutSlice = createSlice({
       state.step = action.payload;
     },
     nextStep: (state) => {
-      console.log("yes");
-
       if (state.step < 5) state.step += 1;
     },
   },

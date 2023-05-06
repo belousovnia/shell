@@ -1,4 +1,6 @@
 @import "../../../../styles/constants";
+@import '../../../../styles/mixins';
+@include main;
 
 .header {
   height: 100%;
@@ -10,18 +12,6 @@
   padding: 80px;
   background: $groundGrey;
   box-sizing: border-box;
-}
-
-.title {
-  font-weight: 500;
-  font-size: 19px;
-  margin-bottom: 20px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 17px;
-  text-align: start;
 }
 
 .navBlock {

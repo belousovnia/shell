@@ -1,10 +1,10 @@
 import styles from "./styles.module.scss";
-import NavItem from "../NavItem";
+import NavItem from "src/components/ui-components/NavItem";
 import { useLocation } from "react-router-dom";
-import { paths } from "../../../../router";
+import { paths } from "src/router";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../app/store";
-import { nextStep } from "../../store/checkoutSlise";
+import { RootState } from "src/app/store";
+import { nextStep } from "src/features/Checkout/store/checkoutSlise";
 
 export default function Header() {
   const location = useLocation();

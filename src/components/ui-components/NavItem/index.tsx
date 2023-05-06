@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../../app/store";
+import { RootState } from "../../../app/store";
 
 interface NavItemPropsType {
   children?: React.ReactNode;
