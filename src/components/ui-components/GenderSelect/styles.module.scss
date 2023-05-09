@@ -1,0 +1,52 @@
+@import "/src/styles/constants";
+
+.genderSelect {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.container {
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.label {
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: $grey;
+    stroke: $grey;
+  }
+}
+
+.input + .label {
+  padding: 16px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $grey;
+  border-radius: 7px;
+  color: $grey;
+
+}
+
+.input:checked + .label {
+  border: 1px solid $subBlue;
+  color: $subBlue;
+
+  svg {
+    fill: $subBlue;
+    stroke: $subBlue;
+  }
+}
+
+.input:checked {
+  background-color: green;
+}

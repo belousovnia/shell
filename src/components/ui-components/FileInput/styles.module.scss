@@ -1,0 +1,52 @@
+@import 'src/styles/_mixins.scss';
+@include main;
+
+.fileInput {
+  &__input {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    margin: 15px 0;
+    border: 1px solid #c7c7c7;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  &__label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    // border: 1px solid #c7c7c7;
+    // border-left: 0;
+  }
+
+  &__title {
+    height: 60px;
+    width: calc(100% - 130px);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-right: none;
+  }
+
+  &__button {
+    width: 130px;
+    height: 60px;
+    background: #1bbc9b;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+  }
+}

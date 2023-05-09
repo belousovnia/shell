@@ -1,8 +1,9 @@
 import React, { useState, useRef } from "react";
 import useOutsideClick from "src/hooks/useOutsideClick";
-import PerfectScrollbar from "react-perfect-scrollbar";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
+import { HandySvg } from "handy-svg";
+import arrowIcon from "src/assets/images/arrowIcon.svg";
 
 interface Option {
   value: string | number;
@@ -41,29 +42,32 @@ export default function Select({
 
   return (
     <div className={styles.select} ref={elementRef}>
-      <input
-        className={classNames(styles.input, {
-          [styles.input_error]: error,
-        })}
-        onClick={() => setIsOpened(!isOpened)}
-        value={
-          options.find((option) => option.value === value)?.label || value || ""
-        }
-        readOnly
-        disabled={disabled}
-        placeholder={placeholder}
-      />
+      <div className={styles.wrapperInput}>
+        <input
+          className={classNames(styles.input, {
+            [styles.input_error]: error,
+            [styles.input_open]: isOpened,
+          })}
+          onClick={() => setIsOpened(!isOpened)}
+          value={
+            options.find((option) => option.value === value)?.label ||
+            value ||
+            ""
+          }
+          readOnly
+          disabled={disabled}
+          placeholder={placeholder}
+        />
+        <HandySvg
+          src={arrowIcon}
+          className={classNames(styles.arrow, {
+            [styles.arrow_open]: isOpened,
+          })}
+        />
+      </div>
 
       {isOpened && (
-        <PerfectScrollbar
-          className={styles.modalSelect}
-          options={{
-            wheelPropagation: false,
-            useBothWheelAxes: false,
-            suppressScrollX: true,
-            swipeEasing: true,
-          }}
-        >
+        <div className={styles.modalSelect}>
           <div>
             {options.map((option) => (
               <div
@@ -75,7 +79,7 @@ export default function Select({
               </div>
             ))}
           </div>
-        </PerfectScrollbar>
+        </div>
       )}
     </div>
   );

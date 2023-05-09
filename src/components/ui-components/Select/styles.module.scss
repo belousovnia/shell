@@ -1,38 +1,74 @@
-@import "/src/styles/mixins";
+@import 'src/styles/_mixins.scss';
+@include main;
 
   .select {
     position: relative;
+    max-width: 521px;
+    width: 100%;
   }
 
   .modalSelect {
     position: absolute;
-    top: calc(100% + 8px);
+    top: 100%;
     z-index: 1;
     width: 100%;
     height: auto;
     max-height: 200px;
-    padding: 12px 20px;
-    overflow: hidden;
+    overflow: auto; 
     background-color: #FFF;
-    border: 1px solid #C1C9CD;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .12);
+    border: 1px solid $grey;
+    border-radius: 0  0 20px 20px;
+    box-sizing: border-box;
+
     
     &_off {
       display: none;
-    }
+    } 
   }
 
   .option {
-    padding: 6px 0;
+    padding: 16px 20px;
     cursor: pointer;
-    border-bottom: 1px solid #E0E4E6;
   
     &:hover {
-      color: #0096D5;
+      background-color: $selectBlue;
     }
   
     &:last-child {
       border-bottom: 0;
+    }
+  }
+
+  .wrapperInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .arrow {
+    position: absolute;
+    width: 14px;
+    height: 8px;
+    right: 20px;
+    transform: rotate(0deg);
+    transition-duration: 0.18s;
+
+    &_open {
+      transform: rotate(180deg);
+    }
+  }
+
+  .input {
+    background-color: $backgroundGrey;
+    padding-right: 40px;
+
+    &:focus {
+      border-color: $grey;
+    }
+
+    &_open {
+      border-bottom: 0;
+      border-radius: 7px 7px 0  0 ;
     }
   }

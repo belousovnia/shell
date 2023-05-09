@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
@@ -35,7 +35,7 @@ export default function NavItem({
         </div>
         <div className={styles.line}></div>
       </div>
-      <Link to={link} className={styles.link}>
+      <h2 className={styles.link}>
         {children}
         <div
           className={classNames(styles.checkMark, {
@@ -44,7 +44,7 @@ export default function NavItem({
         >
           ✓
         </div>
-      </Link>
+      </h2>
     </div>
   );
 }
