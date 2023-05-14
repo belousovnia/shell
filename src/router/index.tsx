@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import App from "../App";
 import OverallForm from "../features/Checkout/components/OverallForm";
 import AddressResidenceForm from "../features/Checkout/components/AddressResidenceForm";
@@ -16,7 +16,7 @@ export const paths = {
   },
 };
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: paths.origin,
     element: <App />,
