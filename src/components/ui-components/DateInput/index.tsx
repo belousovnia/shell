@@ -5,14 +5,18 @@ import IMask, { InputMask } from "imask";
 
 interface DateInputPropsType {
   value: string;
-  setValue: React.Dispatch<React.SetStateAction<any>>;
-  isError?: boolean;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
+  errorString?: string;
+  title?: string;
+  isDisabled?: boolean;
 }
 
 export default function DateInput({
   setValue,
   value,
-  isError = false,
+  errorString = "",
+  title = "",
+  isDisabled = false,
 }: DateInputPropsType) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [mask, setMask] = useState<InputMask<any> | null>(null);
@@ -31,15 +35,26 @@ export default function DateInput({
     };
   }, []);
 
+  useEffect(() => {
+    if (mask && value !== mask.value) {
+      mask.value = value;
+      mask.updateValue();
+    }
+  }, [mask, value]);
+
   return (
-    <input
-      ref={inputRef}
-      className={classNames(styles.input, {
-        [styles.input_error]: isError,
-      })}
-      value={value}
-      onInput={(i) => setValue(i.currentTarget.value)}
-      placeholder="__ . __ . ____"
-    ></input>
+    <div className={styles.inputBlock}>
+      <h2 className={styles.inputTitle}>{title}</h2>
+      <input
+        ref={inputRef}
+        className={classNames(styles.input, {
+          [styles.input_error]: errorString,
+        })}
+        onChange={(i) => setValue(i.currentTarget.value)}
+        placeholder="__ . __ . ____"
+        disabled={isDisabled}
+      />
+      {errorString && <p className={styles.textError}>{errorString}</p>}
+    </div>
   );
 }

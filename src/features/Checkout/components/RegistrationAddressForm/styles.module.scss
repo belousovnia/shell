@@ -1,4 +1,2 @@
-.RegistrationAddressForm {
-  font-size: 40px;
-  color: red;
-}
+@import 'src/styles/_mixins.scss';
+@include main;

@@ -27,8 +27,7 @@
 
   .form {
     width: 100%;
-    min-height: calc(100% - 220px);
-    box-sizing: border-box;
+    min-height: calc(100vh - 140px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -40,17 +39,39 @@
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-top: 40px;
+
+    &_121 {
+      gap: 30px;
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    &_211 {
+      gap: 30px;
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    &_31 {
+      gap: 30px;
+      grid-template-columns: 3fr 1fr;
+    }
+
+    &_112 {
+      gap: 30px;
+      grid-template-columns: 1fr 1fr 2fr;
+    }
+
+    &_112 {
+      gap: 30px;
+      grid-template-columns: 1fr 1fr 2fr;
+    }
+
+    &_inputBlock {
+      margin-top: 0;
+    }
   }
 
   .formMonoLine {
     display: block;
-    margin-top: 40px;
-  }
-
-  .formTripleLine {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 30px;
     margin-top: 40px;
   }
 
@@ -71,6 +92,8 @@
   }
 
   .formContent {
+    height: 100%;
+
     &_hidden {
       display: none;
     }
@@ -85,6 +108,15 @@
     font-size: 15px;
     padding: 17px 20px;
     box-sizing: border-box;
+
+    &:disabled {
+      pointer-events: none;
+      background-color: $backgroundGrey;
+    }
+
+    &_empty {
+      color: $grey;
+    }
 
     &:focus {
       border-color: $subBlue;
@@ -120,6 +152,7 @@
 
     &:disabled {
       opacity: 0.3;
+      pointer-events: none;
     }
 
     &:hover {
@@ -138,6 +171,11 @@
     background-color: $noColor;
     border: 0;
     padding: 0;
+    cursor: pointer;
+
+    &:disabled {
+      pointer-events: none;
+    }
 
     &:hover {
       color: $subBlue;
@@ -145,6 +183,20 @@
 
     &:active {
       color: $mainBlue;
+    }
+  }
+
+  
+  .registrationAddress {
+    padding-top: 26px;
+    display: flex;
+    align-items: center;
+    height: 52px;
+  }
+
+  .input_small {
+    input {
+      padding: 17px 12px;
     }
   }
 }

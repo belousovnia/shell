@@ -1,4 +1,17 @@
-.SocialMediaForm {
-  font-size: 40px;
-  color: red;
+@import 'src/styles/_mixins.scss';
+@include main;
+
+.socialMediaForm {
+  &__buttonAdd {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__buttonAddPlus {
+    font-size: 26px;
+    margin-right: 4px;
+    position: relative;
+    bottom: 2px;
+  }
 }

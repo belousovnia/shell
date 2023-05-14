@@ -1,52 +1,52 @@
 @import "/src/styles/constants";
+@import 'src/styles/_mixins.scss';
+@include main;
 
 .genderSelect {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-}
 
-.container {
-  position: relative;
-}
+  &__inputRadio {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
 
-.input {
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-}
+  &__container {
+    position: relative;
+  }
 
-.label {
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: $grey;
-    stroke: $grey;
+  &__label {
+    height: 52px;
+    box-sizing: border-box;
+    padding: 16px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $grey;
+    border-radius: 7px;
+    color: $grey;
+
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $grey;
+      stroke: $grey;
+    }
+  }
+
+  &__inputRadio:checked + &__label  {
+    border: 1px solid $subBlue;
+    color: $subBlue;
+
+    svg {
+      fill: $subBlue;
+      stroke: $subBlue;
+    }
   }
 }
 
-.input + .label {
-  padding: 16px 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid $grey;
-  border-radius: 7px;
-  color: $grey;
 
-}
-
-.input:checked + .label {
-  border: 1px solid $subBlue;
-  color: $subBlue;
-
-  svg {
-    fill: $subBlue;
-    stroke: $subBlue;
-  }
-}
-
-.input:checked {
-  background-color: green;
-}

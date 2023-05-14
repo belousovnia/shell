@@ -1,0 +1,59 @@
+@import 'src/styles/_mixins.scss';
+@import 'src/styles/_constants.scss';
+@include main;
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__label {
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    user-select: none;
+
+    &_error {
+      border: 1px solid red;
+    }
+    
+    &_check {
+      border: 1px solid $mainBlue;
+      background-color: $mainBlue;
+    }
+
+    &_disabled {
+      background-color: $backgroundGrey;
+      border: 1px solid $grey;
+      pointer-events: none;
+      color: $grey;
+    }
+
+  }
+
+
+  &__title {
+    color: $grey;
+    font-weight: 400;
+    font-size: 14px;
+
+    &_error {
+      color: red;
+    }
+  }
+}

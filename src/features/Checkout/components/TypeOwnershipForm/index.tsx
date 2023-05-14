@@ -4,17 +4,21 @@ import { RootState } from "src/app/store";
 import styles from "./styles.module.scss";
 import iconTypeOwnershipForm from "src/assets/images/iconTypeOwnershipForm.svg";
 import { HandySvg } from "handy-svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "src/components/ui-components/Select";
-import TypeIPForm from "./components/TypeIPForm";
+import IPForm from "./components/IPForm";
+import OOOForm from "./components/OOOForm";
 
 export default function TypeOwnershipForm() {
-  const dispatch = useDispatch();
   const checkoutStore = useSelector((state: RootState) => state.checkoutStore);
   const navigate = useNavigate();
 
   const [typeActivity, setTypeActivity] = useState<"ИП" | "ООО" | null>(null);
-  const [errorTypeActivity, setErrorTypeActivity] = useState("");
+
+  useEffect(() => {
+    if (checkoutStore.ownershipForm)
+      setTypeActivity(checkoutStore.ownershipForm.TypeOwnership);
+  }, []);
 
   return (
     <div className={styles.form}>
@@ -37,19 +41,22 @@ export default function TypeOwnershipForm() {
               },
             ]}
             placeholder="выбрать"
-            error={!!errorTypeActivity}
           />
-          <p className={styles.textError}>{errorTypeActivity}</p>
         </div>
 
-        {typeActivity === "ИП" && <TypeIPForm />}
+        <IPForm isHidden={typeActivity !== "ИП"} />
+        <OOOForm isHidden={typeActivity !== "ООО"} />
       </div>
-      <div className={styles.formFooter}>
-        <button className={styles.linkButton}>Отмена</button>
-        <button className={styles.button} onClick={() => {}}>
-          Далее
-        </button>
-      </div>
+      {typeActivity === null && (
+        <div className={styles.formFooter}>
+          <button className={styles.linkButton} onClick={() => navigate("/")}>
+            Отмена
+          </button>
+          <button className={styles.button} disabled={true}>
+            Далее
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,14 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { OverallFormType } from "../types";
+import {
+  OverallFormType,
+  IPFormType,
+  OOOFormType,
+  RegistrationAddressFormType,
+  AddressResidenceFormType,
+  SocialMediaItemType,
+} from "../types";
 
 export interface CheckoutStateType {
   step: 1 | 2 | 3 | 4 | 5;
   overallForm: OverallFormType | null;
+  ownershipForm: IPFormType | OOOFormType | null;
+  registrationAddress: RegistrationAddressFormType | null;
+  addressResidenceForm: AddressResidenceFormType | null;
+  socialMediaForm: SocialMediaItemType[] | null;
 }
 
 const initialState: CheckoutStateType = {
   step: 1,
   overallForm: null,
+  ownershipForm: null,
+  registrationAddress: null,
+  addressResidenceForm: null,
+  socialMediaForm: null,
 };
 
 export const checkoutSlice = createSlice({
@@ -21,15 +36,44 @@ export const checkoutSlice = createSlice({
     nextStep: (state) => {
       if (state.step < 5) state.step += 1;
     },
-    previousStep: (state) => {
-      if (state.step > 1) state.step -= 1;
-    },
     setOverallForm: (state, action: PayloadAction<OverallFormType>) => {
       state.overallForm = action.payload;
+    },
+    setOwnershipForm: (
+      state,
+      action: PayloadAction<IPFormType | OOOFormType>
+    ) => {
+      state.ownershipForm = action.payload;
+    },
+    setRegistrationAddress: (
+      state,
+      action: PayloadAction<RegistrationAddressFormType>
+    ) => {
+      state.registrationAddress = action.payload;
+    },
+    setAddressResidence: (
+      state,
+      action: PayloadAction<AddressResidenceFormType>
+    ) => {
+      state.addressResidenceForm = action.payload;
+    },
+    setSocialMediaForm: (
+      state,
+      action: PayloadAction<SocialMediaItemType[]>
+    ) => {
+      state.socialMediaForm = action.payload;
     },
   },
 });
 
-export const { nextStep, previousStep, setStep, setOverallForm } = checkoutSlice.actions;
+export const {
+  nextStep,
+  setStep,
+  setOverallForm,
+  setOwnershipForm,
+  setRegistrationAddress,
+  setAddressResidence,
+  setSocialMediaForm,
+} = checkoutSlice.actions;
 
 export default checkoutSlice.reducer;
