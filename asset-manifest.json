@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "//shell/static/css/main.ead8e1ab.css",
-    "main.js": "//shell/static/js/main.21166623.js",
-    "static/js/787.2181cea3.chunk.js": "//shell/static/js/787.2181cea3.chunk.js",
-    "static/media/Inter-Regular.otf": "//shell/static/media/Inter-Regular.a416f4674fad5f019461.otf",
-    "static/media/iconDownload.svg": "//shell/static/media/iconDownload.10b9dad34e0f142428765a12c933929b.svg",
-    "static/media/iconTypeOwnershipForm.svg": "//shell/static/media/iconTypeOwnershipForm.c696a20285303e5b5b585ae3bfb90469.svg",
-    "static/media/iconAddressResidence.svg": "//shell/static/media/iconAddressResidence.fe7d6dd36145fbf44834ef81d53611f0.svg",
-    "static/media/iconSocialMedia.svg": "//shell/static/media/iconSocialMedia.dbcefc83702ae007711372696db73d5f.svg",
-    "static/media/iconOverallForm.svg": "//shell/static/media/iconOverallForm.63ca0623cf6781acaffc5f39a00f665f.svg",
-    "static/media/iconMan.svg": "//shell/static/media/iconMan.977fbb3819651c07aa1453388b82796c.svg",
-    "index.html": "//shell/index.html",
-    "static/media/arrowIcon.svg": "//shell/static/media/arrowIcon.a906b425c9f50ef724e7862fad281e5c.svg",
-    "static/media/iconWoman.svg": "//shell/static/media/iconWoman.05e2c627ab9ddda2e703ffcf8de4f2b1.svg",
-    "static/media/iconCross.svg": "//shell/static/media/iconCross.dc1ccc4dfa15b5339eb0c27ed79cbbde.svg",
-    "static/media/iconCheckMark.svg": "//shell/static/media/iconCheckMark.b76dff6b6e1b0aab63213772d365818d.svg",
-    "main.ead8e1ab.css.map": "//shell/static/css/main.ead8e1ab.css.map",
-    "main.21166623.js.map": "//shell/static/js/main.21166623.js.map",
-    "787.2181cea3.chunk.js.map": "//shell/static/js/787.2181cea3.chunk.js.map"
+    "main.css": "/shell/static/css/main.4d68055c.css",
+    "main.js": "/shell/static/js/main.46b8c8be.js",
+    "static/js/787.2181cea3.chunk.js": "/shell/static/js/787.2181cea3.chunk.js",
+    "static/media/Inter-Regular.otf": "/shell/static/media/Inter-Regular.a416f4674fad5f019461.otf",
+    "static/media/iconDownload.svg": "/shell/static/media/iconDownload.10b9dad34e0f142428765a12c933929b.svg",
+    "static/media/iconTypeOwnershipForm.svg": "/shell/static/media/iconTypeOwnershipForm.c696a20285303e5b5b585ae3bfb90469.svg",
+    "static/media/iconAddressResidence.svg": "/shell/static/media/iconAddressResidence.fe7d6dd36145fbf44834ef81d53611f0.svg",
+    "static/media/iconSocialMedia.svg": "/shell/static/media/iconSocialMedia.dbcefc83702ae007711372696db73d5f.svg",
+    "static/media/iconOverallForm.svg": "/shell/static/media/iconOverallForm.63ca0623cf6781acaffc5f39a00f665f.svg",
+    "static/media/iconMan.svg": "/shell/static/media/iconMan.977fbb3819651c07aa1453388b82796c.svg",
+    "index.html": "/shell/index.html",
+    "static/media/arrowIcon.svg": "/shell/static/media/arrowIcon.a906b425c9f50ef724e7862fad281e5c.svg",
+    "static/media/iconWoman.svg": "/shell/static/media/iconWoman.05e2c627ab9ddda2e703ffcf8de4f2b1.svg",
+    "static/media/iconCross.svg": "/shell/static/media/iconCross.dc1ccc4dfa15b5339eb0c27ed79cbbde.svg",
+    "static/media/iconCheckMark.svg": "/shell/static/media/iconCheckMark.b76dff6b6e1b0aab63213772d365818d.svg",
+    "main.4d68055c.css.map": "/shell/static/css/main.4d68055c.css.map",
+    "main.46b8c8be.js.map": "/shell/static/js/main.46b8c8be.js.map",
+    "787.2181cea3.chunk.js.map": "/shell/static/js/787.2181cea3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ead8e1ab.css",
-    "static/js/main.21166623.js"
+    "static/css/main.4d68055c.css",
+    "static/js/main.46b8c8be.js"
   ]
 }
